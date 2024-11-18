@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/inputNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@id/textView" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/inputEdat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -45,16 +45,16 @@
         android:hint="@string/edat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/inputNom" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerClasses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEdat" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,18 +65,18 @@
         android:layout_marginHorizontal="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner">
+        app:layout_constraintTop_toBottomOf="@+id/spinnerClasses">
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonAfegir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Button" />
+                android:text="@string/afegir_alumne" />
 
         </RelativeLayout>
 
@@ -85,11 +85,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonLlistar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Button" />
+                android:text="@string/llistar_alumnes" />
         </RelativeLayout>
 
 

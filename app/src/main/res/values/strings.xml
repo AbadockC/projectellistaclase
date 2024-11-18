@@ -3,4 +3,15 @@
     <string name="nom">Nom</string>
     <string name="edat">Edat</string>
     <string name="llistar_alumnes">Llistar Alumnes</string>
+    <string name="afegir_alumne">Afegir Alumne</string>
+    <string name="foto_alumne">foto del alumne</string>
+    <string name="edat_text">Edat: </string>
+    <string name="nom_text">Nom: </string>
+    <string name="tornar">Tornar</string>
+    <string-array name="classes">
+        <item>1r SMX</item>
+        <item>2n SMX</item>
+        <item>1r DAM</item>
+        <item>2n DAM</item>
+    </string-array>
 </resources>
