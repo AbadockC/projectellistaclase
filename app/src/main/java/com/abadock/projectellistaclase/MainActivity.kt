@@ -3,6 +3,7 @@ package com.abadock.projectellistaclase
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -44,14 +45,36 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonAfegir.setOnClickListener{
-            DataSource().addAlumne(AlumnesViewModel(R.drawable.logo_lila, binding.inputNom.text.toString(), binding.inputEdat.text.toString().toInt(), binding.spinnerClasses.selectedItem.toString()))
+            if(binding.inputNom.text.toString() != "" && binding.inputEdat.text.toString() != "") {
+                DataSource().addAlumne(
+                    AlumnesViewModel(
+                        R.drawable.logo_lila,
+                        binding.inputNom.text.toString(),
+                        binding.inputEdat.text.toString().toInt(),
+                        binding.spinnerClasses.selectedItem.toString()
+                    )
+                )
 
-            binding.inputNom.setText("")
-            binding.inputEdat.setText("")
+                binding.inputNom.setText("")
+                binding.inputEdat.setText("")
 
-            binding.textView.text = DataSource().loadAlumnes().toString()
+                val text = "Alumne afegit"
+                val duration = Toast.LENGTH_SHORT
 
+                val toast = Toast.makeText(this, text, duration) // in Activity
+                toast.show()
+
+            } else {
+
+                val text = "Tens camps buits"
+                val duration = Toast.LENGTH_SHORT
+
+                val toast = Toast.makeText(this, text, duration) // in Activity
+                toast.show()
+
+            }
         }
+
 
 
     }

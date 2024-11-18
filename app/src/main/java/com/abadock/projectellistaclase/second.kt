@@ -1,6 +1,7 @@
 package com.abadock.projectellistaclase
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,7 +28,6 @@ class second : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
 
-
         val extras = intent.extras
         if (extras != null) {
             val nom = extras.getString("nom")
@@ -37,6 +37,14 @@ class second : AppCompatActivity() {
 
             val curs = extras.getString("curs")
             binding.recyclerView.adapter = AlumnesAdapter(DataSource().loadAlumnes().filter { it.curs == curs})
+        }
+
+        binding.recyclerView.setOnClickListener {
+            val text = "Alumne: $it.nom, Edat: $it.edat"
+            val duration = Toast.LENGTH_SHORT
+
+            val toast = Toast.makeText(this, text, duration) // in Activity
+            toast.show()
         }
 
 
