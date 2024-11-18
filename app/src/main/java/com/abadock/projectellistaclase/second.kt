@@ -32,11 +32,11 @@ class second : AppCompatActivity() {
         if (extras != null) {
             val nom = extras.getString("nom")
             if (nom != null) {
-                DataSource().reOrder(nom)
+                DataSource.instance.reOrder(nom)
             }
 
             val curs = extras.getString("curs")
-            binding.recyclerView.adapter = AlumnesAdapter(DataSource().loadAlumnes().filter { it.curs == curs})
+            binding.recyclerView.adapter = AlumnesAdapter(DataSource.instance.loadAlumnes().filter { it.curs == curs})
         }
 
         binding.recyclerView.setOnClickListener {

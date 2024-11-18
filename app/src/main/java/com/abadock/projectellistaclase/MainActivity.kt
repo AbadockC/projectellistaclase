@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonAfegir.setOnClickListener{
             if(binding.inputNom.text.toString() != "" && binding.inputEdat.text.toString() != "") {
-                DataSource().addAlumne(
+                DataSource.instance.addAlumne(
                     AlumnesViewModel(
                         R.drawable.logo_lila,
                         binding.inputNom.text.toString(),

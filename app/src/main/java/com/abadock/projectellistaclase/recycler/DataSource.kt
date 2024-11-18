@@ -1,7 +1,7 @@
 package com.abadock.projectellistaclase.recycler
 
-class DataSource {
-    var LlistarAlumnes = mutableListOf(
+class DataSource private constructor() {
+    val LlistarAlumnes: MutableList<AlumnesViewModel> = mutableListOf(
         AlumnesViewModel(1,"Sofía", 16, "1r SMX"),
         AlumnesViewModel(1,"Mateo", 15, "1r SMX"),
         AlumnesViewModel(1,"Camila", 17, "2n SMX"),
@@ -11,6 +11,10 @@ class DataSource {
         AlumnesViewModel(1,"Julia", 17, "2n DAM"),
         AlumnesViewModel(1,"Diego", 16, "2n DAM"),
     )
+
+    companion object {
+        val instance: DataSource by lazy { DataSource() }
+    }
 
     fun loadAlumnes() :List<AlumnesViewModel>{
         return LlistarAlumnes
